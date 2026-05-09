@@ -1,0 +1,16 @@
+amends "@formae/forma.pkl"
+import "@formae/formae.pkl"
+import "@localfs/localfs.pkl"
+
+local testRunID = read("env:FORMAE_TEST_RUN_ID")
+local stackName = "conformance-test-\(testRunID)"
+
+forma {
+  new formae.Stack { label = stackName; description = "Conformance test for LOCALFS::FS::Directory" }
+  new formae.Target { label = "localfs-target"; config = new localfs.Config { basePath = read("env:LOCALFS_BASE_PATH") } }
+  new localfs.Directory {
+    label = "test-directory"
+    path = "conformance-test-dir-replaced-\(testRunID)"
+    permissions = "0755"
+  }
+}

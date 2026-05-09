@@ -1,0 +1,14 @@
+amends "pkl:Project"
+
+package {
+  name = "localfs"
+  baseUri = "package://hub.platform.engineering/plugins/localfs/schema/pkl/\(name)/\(name)"
+  version = "0.1.0"
+  packageZipUrl = "https://hub.platform.engineering/plugins/localfs/schema/pkl/\(name)/\(name)@\(version).zip"
+}
+
+dependencies {
+  ["formae"] {
+    uri = "package://hub.platform.engineering/plugins/pkl/schema/pkl/formae/formae@0.84.0"
+  }
+}

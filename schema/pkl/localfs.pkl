@@ -1,0 +1,39 @@
+/// Local filesystem plugin schema.
+/// Defines target configuration and resource types for managing
+/// directories on the local filesystem.
+module localfs
+
+import "@formae/formae.pkl"
+
+/// Target configuration for the local filesystem.
+/// All resource paths are resolved relative to `basePath`.
+open class Config {
+  hidden fixed type: String = "LocalFS"
+
+  /// Absolute path under which managed directories live.
+  hidden basePath: String
+
+  fixed Type: String = type
+  fixed BasePath: String = basePath
+}
+
+/// Resource type identifier for a Directory.
+const directoryType: String = "LOCALFS::FS::Directory"
+
+/// A directory on the local filesystem.
+@formae.ResourceHint {
+  type = module.directoryType
+  identifier = "$.path"
+}
+class Directory extends formae.Resource {
+  fixed hidden type: String = module.directoryType
+
+  /// Path relative to the target's basePath.
+  /// Cannot be changed after creation (triggers replacement).
+  @formae.FieldHint { createOnly = true }
+  path: String
+
+  /// Directory permissions in octal notation (e.g. "0755").
+  @formae.FieldHint {}
+  permissions: String = "0755"
+}

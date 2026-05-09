@@ -1,0 +1,7 @@
+name = "localfs"
+version = "0.1.0"
+namespace = "LOCALFS"
+description = "Local filesystem plugin for formae"
+license = "Apache-2.0"
+minFormaeVersion = "0.84.0"
+output { renderer = new JsonRenderer {} }

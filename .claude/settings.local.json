@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.formae.io)",
+      "Bash(go build *)",
+      "Bash(go list *)",
+      "Bash(gh release *)",
+      "Bash(gh api *)",
+      "Bash(go mod *)",
+      "Bash(grep -E \"^\\(v[0-9]|pkl-schema|cmd|pkg/plugin\\($|/\\)\\)\")",
+      "Bash(pkl --version)",
+      "Bash(gh search *)",
+      "Bash(go get *)",
+      "Bash(pkl project *)",
+      "Bash(pkl eval *)",
+      "Bash(FORMAE_TEST_RUN_ID=test123 LOCALFS_BASE_PATH=/tmp/test-base pkl eval --project-dir testdata --format json testdata/localfs-fs-file.pkl)",
+      "Bash(go vet *)",
+      "Bash(FORMAE_TEST_RUN_ID=t1 LOCALFS_BASE_PATH=/tmp/lfs pkl eval --project-dir testdata --format json testdata/localfs-fs-directory.pkl)",
+      "Read(//opt/pel/formae/bin/**)",
+      "Bash(/opt/pel/formae/bin/formae --version)",
+      "Bash(/opt/pel/formae/bin/formae version *)",
+      "Bash(/opt/pel/bin/formae version *)",
+      "Bash(/opt/pel/bin/formae --help)",
+      "Bash(/opt/pel/bin/formae)",
+      "Bash(make install *)",
+      "Bash(make conformance-test-crud *)"
+    ]
+  }
+}
