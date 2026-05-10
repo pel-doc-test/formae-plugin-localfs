@@ -23,7 +23,26 @@
       "Bash(/opt/pel/bin/formae --help)",
       "Bash(/opt/pel/bin/formae)",
       "Bash(make install *)",
-      "Bash(make conformance-test-crud *)"
+      "Bash(make conformance-test-crud *)",
+      "Bash(/opt/pel/bin/formae agent *)",
+      "Bash(tee /tmp/lfs-conf.log)",
+      "Bash(echo \"===END=== exit $?\")",
+      "Read(//tmp/**)",
+      "Bash(sed -n '/successfully started/,$p' /tmp/lfs-conf.log)",
+      "Read(//private/tmp/lfs-conf/**)",
+      "Read(//Users/pb/.pel/formae/log/**)",
+      "Read(//Users/pb/.pel/formae/plugins/localfs/v0.1.0/schema/pkl/**)",
+      "Bash(mkdir -p /tmp/probe-dir)",
+      "Bash(cp /tmp/probe.pkl /tmp/probe-dir/PklProject)",
+      "Bash(cp /tmp/probe-eval.pkl /tmp/probe-dir/probe.pkl)",
+      "Bash(base64 -d)",
+      "Bash(/opt/pel/bin/formae extract *)",
+      "Bash(go test *)",
+      "Bash(lsof -nP -iTCP -sTCP:LISTEN)",
+      "Read(//Users/pb/.pel/formae/plugins/localfs/v0.1.0/**)",
+      "Bash(go clean *)",
+      "Bash(grep -E \"^local$|formae extract|--query|schema-location\")",
+      "Read(//Users/pb/go/pkg/mod/github.com/platform-engineering-labs/formae/pkg/plugin-conformance-tests@v0.2.3-0.20260510041738-f163598217f3/**)"
     ]
   }
 }
