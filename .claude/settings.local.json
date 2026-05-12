@@ -42,7 +42,9 @@
       "Read(//Users/pb/.pel/formae/plugins/localfs/v0.1.0/**)",
       "Bash(go clean *)",
       "Bash(grep -E \"^local$|formae extract|--query|schema-location\")",
-      "Read(//Users/pb/go/pkg/mod/github.com/platform-engineering-labs/formae/pkg/plugin-conformance-tests@v0.2.3-0.20260510041738-f163598217f3/**)"
+      "Read(//Users/pb/go/pkg/mod/github.com/platform-engineering-labs/formae/pkg/plugin-conformance-tests@v0.2.3-0.20260510041738-f163598217f3/**)",
+      "Bash(chmod +x scripts/ci/clean-environment.sh)",
+      "Bash(make build *)"
     ]
   }
 }
