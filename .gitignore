@@ -1,2 +1,33 @@
+# Binaries
 bin/
-schema/pkl/demo.pkl
+dist/
+*.so
+*.exe
+
+# Go
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage.out
+coverage.html
+
+# Pkl
+.pkl-cache/
+*.pkl-expected.pcf
+PklProject.deps.json
+schema/pkl/VERSION
+.out/
+
+# Claude Code
+CLAUDE.md
+.claude/
